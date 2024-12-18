@@ -1,0 +1,2 @@
+# A list of base requirements to simplify the package upgrade process
+Django>=5.1.4
