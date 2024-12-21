@@ -8,3 +8,15 @@ Create and activate a Python virtualenv
 
 Install dependencies
 `(venv) pip install -r requirements.txt`
+
+## Run migrations
+
+`python manage.py migrate`
+
+## Run the development server
+
+`python manage.py runserver`
+
+## Run tests
+
+`python manage.py test`
