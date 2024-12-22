@@ -3,3 +3,6 @@ venv
 
 # OSX Folder files
 *.DS_Store
+
+# Python cache files
+*__pycache__

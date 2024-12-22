@@ -126,3 +126,6 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "core.User"
+DJANGO_BULLA_ACCOUNT_MODEL = "ledger.Account"
+DJANGO_BULLA_TRANSACTION_MODEL = "ledger.Transaction"
+DJANGO_BULLA_STATEMENT_MODEL = "ledger.Statement"
