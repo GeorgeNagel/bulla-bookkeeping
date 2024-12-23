@@ -5,4 +5,5 @@ from core.models.mixins import IdentifiableMixin
 
 
 class TransactionLeg(IdentifiableMixin, AbstractTransactionLeg):
-    pass
+    def __str__(self):
+        return f"TransactionLeg (id {self.id}) of amount {self.amount} ({self.normal}) to account {self.account.name} on {self.transaction.created}"
