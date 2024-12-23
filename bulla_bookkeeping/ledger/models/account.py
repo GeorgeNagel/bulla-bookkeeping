@@ -9,6 +9,7 @@ class Account(IdentifiableMixin, AbstractAccount):
     parent = models.ForeignKey(
         "ledger.Account",
         null=True,
+        blank=True,
         on_delete=models.DO_NOTHING,
     )
 
