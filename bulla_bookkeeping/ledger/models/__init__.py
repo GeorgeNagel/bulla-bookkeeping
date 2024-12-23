@@ -2,3 +2,4 @@
 from ledger.models.account import Account as _Account
 from ledger.models.statement import Statement as _Statement
 from ledger.models.transaction import Transaction as _Transaction
+from ledger.models.transaction_leg import TransactionLeg as _TransactionLeg

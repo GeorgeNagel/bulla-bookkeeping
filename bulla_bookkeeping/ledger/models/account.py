@@ -13,4 +13,4 @@ class Account(IdentifiableMixin, AbstractAccount):
     )
 
     # How this Account should be displayed in the UI
-    label = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=100, unique=True)
