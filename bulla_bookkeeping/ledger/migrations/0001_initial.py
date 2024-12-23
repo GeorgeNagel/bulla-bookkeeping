@@ -70,6 +70,7 @@ class Migration(migrations.Migration):
                     "parent",
                     models.ForeignKey(
                         null=True,
+                        blank=True,
                         on_delete=django.db.models.deletion.DO_NOTHING,
                         to="ledger.account",
                     ),
