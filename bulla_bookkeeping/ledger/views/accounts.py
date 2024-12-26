@@ -20,6 +20,8 @@ class ListAccountsView(TemplateView):
 class AccountDetailView(DetailView):
     model = Account
     template_name = "account_detail.html"
+    slug_url_kwarg = "uuid"
+    slug_field = "uuid"
 
 
 class CreateAccountView(CreateView):

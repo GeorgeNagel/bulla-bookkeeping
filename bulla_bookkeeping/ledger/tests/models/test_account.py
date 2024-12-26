@@ -10,4 +10,4 @@ class TestAccount(TestCase):
 
         absolute_url = account.get_absolute_url()
 
-        self.assertEqual(absolute_url, f"/accounts/{account.id}")
+        self.assertEqual(absolute_url, f"/accounts/{account.uuid}")

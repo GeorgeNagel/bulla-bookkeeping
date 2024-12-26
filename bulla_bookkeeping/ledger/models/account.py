@@ -21,4 +21,4 @@ class Account(IdentifiableMixin, AbstractAccount):
         return f"Account ({self.id}) {self.name} ({self.get_normal_display()})"
 
     def get_absolute_url(self):
-        return reverse("account_detail", kwargs={"pk": self.pk})
+        return reverse("account_detail", kwargs={"uuid": self.uuid})

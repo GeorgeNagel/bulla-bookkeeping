@@ -35,7 +35,7 @@ class TestCreateAccountView(TestCase):
 class TestAccountDetailView(TestCase):
     def test_success(self):
         account = AccountFactory()
-        url = reverse("account_detail", kwargs={"pk": account.id})
+        url = reverse("account_detail", kwargs={"uuid": account.uuid})
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, 200)

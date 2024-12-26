@@ -6,6 +6,6 @@ from ledger.views.accounts import ListAccountsView, CreateAccountView, AccountDe
 urlpatterns = [
     path("accounts", ListAccountsView.as_view(), name="accounts"),
     path("accounts/create", CreateAccountView.as_view(), name="create_account"),
-    path("accounts/<pk>", AccountDetailView.as_view(), name="account_detail"),
+    path("accounts/<uuid:uuid>", AccountDetailView.as_view(), name="account_detail"),
     path("", DashboardView.as_view(), name="dashboard"),
 ]
