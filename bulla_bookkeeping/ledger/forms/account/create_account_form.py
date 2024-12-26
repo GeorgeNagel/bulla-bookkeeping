@@ -2,11 +2,11 @@ from django import forms
 
 from django_bulla.models.normals import Normals
 from ledger.models.account import Account
-from ledger.forms.fields.normals import NormalField, NORMAL_FIELD_CHOICES
+from ledger.forms.fields.normals import NormalField
 
 
 class CreateAccountForm(forms.ModelForm):
-    normal = NormalField(choices=NORMAL_FIELD_CHOICES)
+    normal = NormalField()
 
     class Meta:
         model = Account
