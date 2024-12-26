@@ -4,11 +4,10 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block body %}
-<h1>Dashboard</h1>
+<h1>Accounts</h1>
 <ul>
 {% for account in top_level_accounts %}
     <li>{{account.name}}, {{account.balance | cents_to_dollars}}</li>
 {% endfor %}
 </ul>
-<a href="{% url 'accounts' %}">Accounts</a>
 {% endblock %}
