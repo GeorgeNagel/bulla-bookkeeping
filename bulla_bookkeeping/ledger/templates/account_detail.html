@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load money_tags %}
+{% block title %}Account Detail{% endblock %}
+
+{% block body %}
+<h1>Account</h1>
+<p>Name: {{account.name}}</p>
+<p>Normal: {{account.get_normal_display}}</p>
+<p>Balance: {{account.balance | cents_to_dollars}}</p>
+{% endblock %}

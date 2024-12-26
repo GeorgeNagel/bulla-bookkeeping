@@ -1,5 +1,6 @@
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView
+from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
 
 from ledger.forms.account.create_account_form import CreateAccountForm
@@ -14,6 +15,11 @@ class ListAccountsView(TemplateView):
         top_level_accounts = Account.objects.filter(parent=None)
         context["top_level_accounts"] = top_level_accounts
         return context
+
+
+class AccountDetailView(DetailView):
+    model = Account
+    template_name = "account_detail.html"
 
 
 class CreateAccountView(CreateView):

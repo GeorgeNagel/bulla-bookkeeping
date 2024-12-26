@@ -1,5 +1,9 @@
 asgiref==3.8.1
 Django==5.1.4
-django-bulla @ file:///Users/george/code/django-bulla/dist/django_bulla-0.1.tar.gz
+django-bulla @ file:///Users/george/code/django-bulla/dist/django_bulla-0.1.tar.gz#sha256=4cb10728cb8ee381174342571d37dfed86d576cf032ad8ca9e9ff0be7d9211c7
+factory_boy==3.3.1
+Faker==33.1.0
+python-dateutil==2.9.0.post0
+six==1.17.0
 sqlparse==0.5.3
 typing_extensions==4.12.2
