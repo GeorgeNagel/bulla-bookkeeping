@@ -10,5 +10,6 @@
     <li>{{account.name}}, {{account.balance | cents_to_dollars}}</li>
 {% endfor %}
 </ul>
-<a href="{% url 'accounts' %}">Accounts</a>
+<a href="{% url 'accounts_list' %}">Accounts</a>
+<a href="{% url 'transactions_list' %}">Transactions</a>
 {% endblock %}

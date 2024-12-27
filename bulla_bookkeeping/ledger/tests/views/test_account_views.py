@@ -8,7 +8,7 @@ from ledger.tests.factories.account_factory import AccountFactory
 
 class TestListAccountsView(TestCase):
     def test_success(self):
-        url = reverse("accounts")
+        url = reverse("accounts_list")
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, 200)
@@ -23,7 +23,7 @@ class TestCreateAccountView(TestCase):
         response = self.client.post(url, data=data)
 
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(response.headers.get("Location"), reverse("accounts"))
+        self.assertEqual(response.headers.get("Location"), reverse("accounts_list"))
         self.assertEqual(
             Account.objects.filter(
                 name="Foo", normal=Normals.DEBIT, parent=parent_account

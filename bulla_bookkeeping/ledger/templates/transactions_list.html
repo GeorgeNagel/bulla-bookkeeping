@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load money_tags %}
+
+{% block title %}Transactions{% endblock %}
+
+{% block body %}
+<h1>Transactions</h1>
+<ul>
+{% for transaction in transactions %}
+    <li>{{transaction.created.date}}: {{transaction.uuid}}
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

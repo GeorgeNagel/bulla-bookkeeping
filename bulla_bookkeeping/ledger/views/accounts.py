@@ -8,7 +8,7 @@ from ledger.models.account import Account
 
 
 class ListAccountsView(TemplateView):
-    template_name = "accounts.html"
+    template_name = "accounts_list.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -27,4 +27,4 @@ class AccountDetailView(DetailView):
 class CreateAccountView(CreateView):
     template_name = "account_form.html"
     form_class = CreateAccountForm
-    success_url = reverse_lazy("accounts")
+    success_url = reverse_lazy("accounts_list")
