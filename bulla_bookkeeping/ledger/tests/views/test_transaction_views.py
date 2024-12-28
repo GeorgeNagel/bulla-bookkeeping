@@ -3,7 +3,10 @@ from django.urls import reverse
 from django_bulla.models.normals import Normals
 
 from ledger.models.account import Account
-from ledger.tests.factories.transaction_factory import TransactionFactory
+from ledger.tests.factories.transaction_factory import (
+    TransactionFactory,
+    TransactionWithDebitAndCredit,
+)
 
 
 class TestListTransactionsView(TestCase):
@@ -17,7 +20,7 @@ class TestListTransactionsView(TestCase):
 
 class TestTransactionDetailView(TestCase):
     def test_success(self):
-        transaction = TransactionFactory()
+        transaction = TransactionWithDebitAndCredit()
         url = reverse("transaction_detail", kwargs={"uuid": transaction.uuid})
         response = self.client.get(url)
 
