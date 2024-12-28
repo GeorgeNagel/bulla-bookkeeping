@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load money_tags %}
+{% block title %}Transaction Detail{% endblock %}
+
+{% block body %}
+<h1>Transaction</h1>
+<p>Date: {{transaction.created}}</p>
+{% for transaction_leg in transaction.details.all %}
+<p>{{transaction_leg.account}}: {{transaction_leg.amount | cents_to_dollars}} ({{transaction_leg.get_normal_display}})
+{% endfor %}
+{% endblock %}

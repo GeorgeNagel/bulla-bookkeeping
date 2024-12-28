@@ -14,3 +14,10 @@ class ListTransactionsView(TemplateView):
         transactions = Transaction.objects.all().order_by("-created")[:10]
         context["transactions"] = transactions
         return context
+
+
+class TransactionDetailView(DetailView):
+    model = Transaction
+    template_name = "transaction_detail.html"
+    slug_url_kwarg = "uuid"
+    slug_field = "uuid"

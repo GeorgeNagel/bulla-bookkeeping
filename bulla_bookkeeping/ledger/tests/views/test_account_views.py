@@ -17,7 +17,7 @@ class TestListAccountsView(TestCase):
 class TestCreateAccountView(TestCase):
     def test_success(self):
         url = reverse("create_account")
-        parent_account = Account.objects.first()
+        parent_account = AccountFactory()
         data = {"name": "Foo", "normal": "DEBIT", "parent": parent_account.id}
 
         response = self.client.post(url, data=data)
