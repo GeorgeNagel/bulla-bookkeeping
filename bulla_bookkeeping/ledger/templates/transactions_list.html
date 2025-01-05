@@ -1,9 +1,9 @@
-{% extends "base.html" %}
+{% extends "page_with_nav.html" %}
 {% load money_tags %}
 
 {% block title %}Transactions{% endblock %}
 
-{% block body %}
+{% block content %}
 <h1>Transactions</h1>
 <ul>
 {% for transaction in transactions %}

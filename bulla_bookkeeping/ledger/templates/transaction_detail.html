@@ -1,8 +1,12 @@
-{% extends "base.html" %}
+{% extends "page_with_nav.html" %}
 {% load money_tags %}
 {% block title %}Transaction Detail{% endblock %}
 
-{% block body %}
+{% block breadcrumbs %}
+<li><a href="{% url 'transactions_list' %}">Transactions</a></li>
+{% endblock %}
+
+{% block content %}
 <h1>Transaction</h1>
 <p>Date: {{transaction.created}}</p>
 {% for transaction_leg in transaction.details.all %}

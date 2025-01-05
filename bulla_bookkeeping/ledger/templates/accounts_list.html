@@ -1,9 +1,9 @@
-{% extends "base.html" %}
+{% extends "page_with_nav.html" %}
 {% load money_tags %}
 
 {% block title %}Dashboard{% endblock %}
 
-{% block body %}
+{% block content %}
 <h1>Accounts</h1>
 <ul>
 {% for account in top_level_accounts %}

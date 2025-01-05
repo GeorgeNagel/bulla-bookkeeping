@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div>
+    Navigation
+
+    <ul>
+        <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+        {% block breadcrumbs %}
+        {% endblock %}
+    </ul>
+</div>
+{% block content %}
+{% endblock %}
+{% endblock %}
