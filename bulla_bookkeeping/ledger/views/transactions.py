@@ -29,7 +29,7 @@ class CreateTransactionView(CreateView):
         Transaction,
         TransactionLeg,
         fields=["normal", "amount", "account"],
-        extra=2,
+        extra=10,
         formset=CreateTransactionLegInlineFormSet,
     )
     success_url = reverse_lazy("transactions_list")
