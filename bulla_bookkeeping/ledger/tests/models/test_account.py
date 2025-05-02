@@ -33,3 +33,21 @@ class TestAccount(TestCase):
                 ],
             },
         )
+
+    def test_object_with_inline_descendants(self):
+        self.maxDiff = None
+        account = AccountFactory(name="1")
+        descendant_1 = AccountFactory(parent=account, name="2")
+        descendant_2 = AccountFactory(parent=account, name="3")
+        grand_descendant = AccountFactory(parent=descendant_1, name="4")
+
+        object_with_descendants = account.object_with_inline_descendants()
+        self.assertEqual(
+            object_with_descendants,
+            [
+                {"obj": account, "depth": 0},
+                {"obj": descendant_1, "depth": 1},
+                {"obj": grand_descendant, "depth": 2},
+                {"obj": descendant_2, "depth": 1},
+            ],
+        )

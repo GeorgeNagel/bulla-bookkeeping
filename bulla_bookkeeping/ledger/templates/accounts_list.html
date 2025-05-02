@@ -1,13 +1,14 @@
 {% extends "page_with_nav.html" %}
 {% load money_tags %}
+{% load string_tags %}
 
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
 <h1>Accounts</h1>
 <ul>
-{% for account in top_level_accounts %}
-    <li><a href="{{ account.get_absolute_url }}">{{account.name}}</a>, {{account.balance | cents_to_dollars}}</li>
+{% for tree_object in accounts_tree %}
+    <li>{{tree_object.depth | repeat:'---'}}<a href="{{ account.get_absolute_url }}">{{tree_object.obj.name}}</a>, {{tree_object.obj.balance | cents_to_dollars}}</li>
 {% endfor %}
 </ul>
 <a href="{% url 'create_account' %}">Create new Account</a>

@@ -12,8 +12,8 @@ class ListAccountsView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        top_level_accounts = Account.objects.filter(parent=None)
-        context["top_level_accounts"] = top_level_accounts
+        accounts_tree = Account.objects.tree_flattened()
+        context["accounts_tree"] = accounts_tree
         return context
 
 
